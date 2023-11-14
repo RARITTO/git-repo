@@ -1,10 +1,10 @@
 import os 
-folder = 'data'
+folder = 'data'#path
 data = os.listdir(folder)
 print(data )
 for i in data:
     print(i)
-    if i.endswith((".exe", ".jpg", ".png" , ".txt")):
+    if i.endswith((".exe", ".jpg", ".png" , ".txt")):#type of file
         file = i.split('.')[-1]
         
         #i got the type of file so writ now create the folders and transfer the data into foldes
