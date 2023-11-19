@@ -7,4 +7,4 @@ destiny = 'D:\copy - data usb'
 
 shutil.move(path , destiny)
 
-print('succesfully data can transfer')
+print('you have succefully transfer the data ')
