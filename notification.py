@@ -1,13 +1,18 @@
 from plyer import notification
-folder = 'beer.ico'
+import pygame
+
+pygame.init()
+sound = pygame.mixer.Sound("output.wav")
+
 if __name__ == "__main__":
-    
-    
     notification.notify(
-        title="Please Drink Alcohol Daily",#heading data 
-        message="It makes you happy and also provides relief from the pain of anxiety, so please drink alcohol daily, time to time.", #what kind of data your wanted to enter 
-        app_icon= "C:\Users\Lalit\Downloads\beer.ico", # choose the icon location carefullu
+        title="Please Drink Alcohol Daily",
+        message="It makes you happy and also provides relief from the pain of anxiety, so please drink alcohol daily, time to time.",
         timeout=15
     )
-
-print('You got the notification successfully')
+    
+    sound.play()
+    pygame.time.wait(int(sound.get_length() * 1000))
+    
+    pygame.quit()
+    print('You got the notification successfully')
