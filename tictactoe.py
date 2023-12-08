@@ -1,5 +1,5 @@
 
-def sum(a,b,c):
+def check_sum(a,b,c):
     print(a+b+c)
 def printboard (xstate ,ystate):
     data0 = 'X' if xstate[0] else ('O'if ystate[0] else 0)

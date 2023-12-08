@@ -43,18 +43,26 @@ if __name__=='__main__':
                 value = int(input ('please enter a value '))
                 xstate[value] = 1
                 turn = 0
-                if (0,1,2 == "X" ) and (0,3,4=="X") and (6,7,8=="X") and (0,4,5=="X") and (2,4,6=="X") and (0,3,6=="X")and (1,4,7=="X") and (2,5,8 == "X"):
-                    print('x winnes')
-                    # break
+                xwines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+                for win in xwines:
+                    if sum([xstate[win[0]], xstate[win[1]], xstate[win[2]]]) == 3:
+                        print("X wins the match")
+                        print("match is over")
+                        break
+                        
                     
         else:
             print('o chance ')
             value = int(input ('please enter a value '))
             ystate[value] = 1
             turn = 1
-            if (0,1,2 == "Z" ) and (0,3,4=="Z") and (6,7,8=="Z") and (0,4,5=="Z") and (2,4,6=="Z") and (0,3,6=="Z")and (1,4,7=="Z") and (2,5,8 == "Z"):
-                print('o winnes')
-                # break
+            ywines = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+            for win in ywines:
+                if sum([ystate[win[0]], ystate[win[1]], ystate[win[2]]]) == 3:
+                    print("o wins the match")
+                    print("match is over")
+                    break
+                    
                 
             
             print(printboard(xstate ,ystate))
