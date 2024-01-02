@@ -26,12 +26,19 @@ async def fun4 ( ):
     file = requests.get(url , allow_redirects=True)
     open('wiki4.jpg', 'wb').write(file.content)
     print('fun4')
+async def fun5 ( ):
+    
+    url = 'https://c4.wallpaperflare.com/wallpaper/622/676/943/3d-hd-wikipedia-3d-wallpaper-preview.jpg'
+    file = requests.get(url , allow_redirects=True)
+    open('wiki4.jpg', 'wb').write(file.content)
+    print('fun4')
 
 async def main():
     l = await asyncio.gather(
          fun1(),
          fun2(),
          fun3(),
-         fun4()
+         fun4(),
+         fun5()
     )
 asyncio.run(main())
